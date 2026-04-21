@@ -1,0 +1,19 @@
+.env
+runs/
+ckpts/
+data/
+log/
+.venv/
+__pycache__/
+*.pyc
+.DS_Store
+
+# node / vite (post/)
+node_modules/
+dist/
+.vite/
+
+# Perf / snapshot artifacts — regenerate locally, don't commit
+.perf/
+.snapshots/
+.trash/

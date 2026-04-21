@@ -1,0 +1,144 @@
+{
+  "expressions": {
+    "j": {
+      "text": "J GRPO of theta",
+      "file": "j.mp3"
+    },
+    "expectation": {
+      "text": "expectation over q, and the group o sub i from i equals 1 to G, sampled from pi old of q",
+      "file": "expectation.mp3"
+    },
+    "group": {
+      "text": "one over G, sum from i equals one to G",
+      "file": "group.mp3"
+    },
+    "pertoken": {
+      "text": "one over the length of o sub i, sum from t equals one to the length of o sub i",
+      "file": "pertoken.mp3"
+    },
+    "min": {
+      "text": "minimum",
+      "file": "min.mp3"
+    },
+    "ratio": {
+      "text": "rho sub i t",
+      "file": "ratio.mp3"
+    },
+    "advantage": {
+      "text": "A hat sub i",
+      "file": "advantage.mp3"
+    },
+    "clip": {
+      "text": "clip of rho sub i t, one minus epsilon, one plus epsilon",
+      "file": "clip.mp3"
+    },
+    "kl": {
+      "text": "beta times K L divergence of pi theta from pi reference",
+      "file": "kl.mp3"
+    },
+    "theta": {
+      "text": "theta",
+      "file": "theta.mp3"
+    },
+    "epsilon": {
+      "text": "epsilon",
+      "file": "epsilon.mp3"
+    },
+    "beta": {
+      "text": "beta",
+      "file": "beta.mp3"
+    },
+    "q": {
+      "text": "q",
+      "file": "q.mp3"
+    },
+    "G": {
+      "text": "capital G",
+      "file": "G.mp3"
+    },
+    "o-i": {
+      "text": "o sub i",
+      "file": "o-i.mp3"
+    },
+    "pi-theta": {
+      "text": "pi theta",
+      "file": "pi-theta.mp3"
+    },
+    "pi-old": {
+      "text": "pi old",
+      "file": "pi-old.mp3"
+    },
+    "pi-ref": {
+      "text": "pi reference",
+      "file": "pi-ref.mp3"
+    },
+    "R-func": {
+      "text": "R of q comma o",
+      "file": "R-func.mp3"
+    },
+    "one-plus-eps": {
+      "text": "one plus epsilon",
+      "file": "one-plus-eps.mp3"
+    },
+    "a-t": {
+      "text": "a sub t",
+      "file": "a-t.mp3"
+    },
+    "s-t": {
+      "text": "s sub t",
+      "file": "s-t.mp3"
+    },
+    "tau": {
+      "text": "tau",
+      "file": "tau.mp3"
+    },
+    "epsilon-approx": {
+      "text": "epsilon equals zero point two",
+      "file": "epsilon-approx.mp3"
+    },
+    "eps-bounds": {
+      "text": "the interval from zero point eight to one point two",
+      "file": "eps-bounds.mp3"
+    },
+    "delta-logratio": {
+      "text": "delta equals log pi reference, minus log pi theta",
+      "file": "delta-logratio.mp3"
+    },
+    "k3-estimator": {
+      "text": "delta sub t equals log pi reference of a sub t, minus log pi theta of a sub t. K L sub t equals e to the delta sub t, minus delta sub t, minus one.",
+      "file": "k3-estimator.mp3"
+    },
+    "R-eq-1": {
+      "text": "R equals one",
+      "file": "R-eq-1.mp3"
+    },
+    "R-eq-0": {
+      "text": "R equals zero",
+      "file": "R-eq-0.mp3"
+    },
+    "sampling-dist": {
+      "text": "the set of o sub i from i equals 1 to G, sampled from pi old of q",
+      "file": "sampling-dist.mp3"
+    },
+    "reward-formula": {
+      "text": "r sub i equals R of q comma o sub i",
+      "file": "reward-formula.mp3"
+    },
+    "advantage-formula": {
+      "text": "A hat sub i equals r sub i minus the mean of r one through r G, over the standard deviation of r one through r G, plus epsilon",
+      "file": "advantage-formula.mp3"
+    },
+    "ratio-formula": {
+      "text": "rho sub i t equals pi theta of o sub i t given q and o sub i less than t, over pi old of o sub i t given q and o sub i less than t",
+      "file": "ratio-formula.mp3"
+    },
+    "pessimistic-min": {
+      "text": "minimum of rho sub i t times A hat sub i, and clip of rho sub i t, one minus epsilon, one plus epsilon, times A hat sub i",
+      "file": "pessimistic-min.mp3"
+    },
+    "kl-penalty": {
+      "text": "minus beta times K L divergence of pi theta from pi reference",
+      "file": "kl-penalty.mp3"
+    }
+  }
+}
