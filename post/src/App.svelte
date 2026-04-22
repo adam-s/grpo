@@ -1,5 +1,6 @@
 <script lang="ts">
   import Layout from './lib/components/Layout.svelte';
+  import Byline from './lib/components/Byline.svelte';
   import PipelineArrows from './lib/components/PipelineArrows.svelte';
   import PlaybackBar from './lib/components/PlaybackBar.svelte';
   import Opening from './sections/00_Opening.svelte';
@@ -31,5 +32,6 @@
   <Conclusion />
 </Layout>
 
+<Byline />
 <PipelineArrows />
 <PlaybackBar />

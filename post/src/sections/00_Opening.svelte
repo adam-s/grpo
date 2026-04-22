@@ -14,7 +14,7 @@
       complex value network with a simple mechanism: group sampling.
     </p>
     <p>
-      These interactive matrices aren't mockups—they are exact tensors from a tiny custom Transformer trained from scratch via SFT then GRPO. We chose a Rubik's cube as the training task: it requires strict multi-step planning, has an objective goal, and the model's "chain of thought" is simply the sequence of moves.
+      These interactive matrices aren't mockups—they are exact tensors from a tiny custom Transformer trained from scratch via SFT then GRPO, with the full toy training code, pipeline data, and viz source open on <a href="https://github.com/adam-s/grpo">GitHub</a>. We chose a Rubik's cube as the training task: it requires strict multi-step planning, has an objective goal, and the model's "chain of thought" is simply the sequence of moves.
     </p>
   </Prose>
 
