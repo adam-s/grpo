@@ -14,7 +14,7 @@
       complex value network with a simple mechanism: group sampling.
     </p>
     <p>
-      These interactive matrices aren't mockups—they are exact tensors from a tiny custom Transformer trained from scratch via SFT then GRPO, with the full toy training code, pipeline data, and viz source open on <a href="https://github.com/adam-s/grpo">GitHub</a>. We chose a Rubik's cube as the training task: it requires strict multi-step planning, has an objective goal, and the model's "chain of thought" is simply the sequence of moves.
+      These interactive matrices aren't mockups—they are exact tensors from a tiny custom Transformer trained from scratch via SFT then GRPO, with the full toy training code, pipeline data, and viz source open on <a href="https://github.com/adam-s/grpo">GitHub</a>. I chose a Rubik's cube as the training task: it requires strict multi-step planning, has an objective goal, and the model's "chain of thought" is simply the sequence of moves.
     </p>
   </Prose>
 
@@ -22,11 +22,11 @@
 
   <Prose>
     <p>
-      This is a trivial toy learning to reverse a short scramble. Its sole purpose is to produce real, minimal data that fits on your screen, letting us trace GRPO's mechanics without billions of parameters.
+      This is a trivial toy learning to reverse a short scramble. Its sole purpose is to produce real, minimal data that fits on your screen, letting me trace GRPO's mechanics without billions of parameters.
     </p>
     <p>
       The objective function looks dense on paper, but inside the tensors, it’s
-      beautiful. Let's step through the math visually.
+      beautiful. Let me step through the math visually.
     </p>
   </Prose>
 

@@ -10,7 +10,7 @@
 <Section eyebrow="1 · Setup" title="Four actors" id="models">
   <Prose>
     <p>
-      Before dissecting the loss function, let's identify the actors. GRPO operates on four core components:
+      Before dissecting the loss function, let me identify the actors. GRPO operates on four core components:
     </p>
     <ul>
       <li>
@@ -31,7 +31,7 @@
       </li>
     </ul>
     <p>
-      As we step through the math, these won't remain abstract symbols. Each becomes a real tensor: policies as grids of log-probabilities, and the reward as a terminal score.
+      As I step through the math, these won't remain abstract symbols. Each becomes a real tensor: policies as grids of log-probabilities, and the reward as a terminal score.
     </p>
     <p>
       The diagram below shows one representative Transformer block; the toy model has two such blocks stacked.

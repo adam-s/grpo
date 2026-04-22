@@ -19,7 +19,7 @@
       />
     </p>
     <p>
-      A ratio of 1 means confidence hasn't budged. Greater than 1 means the active policy is <em>more</em> confident; below 1 means it's backing away. This importance-sampling correction lets us train the live model using trajectories from a frozen snapshot.
+      A ratio of 1 means confidence hasn't budged. Greater than 1 means the active policy is <em>more</em> confident; below 1 means it's backing away. This importance-sampling correction lets me train the live model using trajectories from a frozen snapshot.
     </p>
   </Prose>
   <OpGrid ops={[5, 6, 7]} perRow={2} theme="light" />

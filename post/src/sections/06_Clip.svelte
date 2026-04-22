@@ -9,7 +9,7 @@
 <Section eyebrow="6 · Clip" title="A trust region on the ratio" id="clip">
   <Prose>
     <p>
-      To prevent the active policy from updating too aggressively, we clip the probability ratio to a narrow window:
+      To prevent the active policy from updating too aggressively, I clip the probability ratio to a narrow window:
     </p>
     <p style="text-align: center;">
       <Math
