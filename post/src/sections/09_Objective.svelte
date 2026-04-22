@@ -19,7 +19,7 @@
       None of this requires a critic model or a learned value function. The group does the job—it's cheaper to compute, and for reasoning tasks with rule-based rewards, it's enough.
     </p>
     <p>
-      Here is a full 100-step training run. Solved rate climbs, clip fraction spikes on hard scrambles, and KL stays small. Click any step to propagate it through every figure above.
+      Here is a full training run—1,838 steps of curriculum from 1-move to 20-move scrambles. Solved rate climbs, clip fraction spikes on hard scrambles, and KL stays small. Click any step to propagate it through every figure above.
     </p>
   </Prose>
 </Section>

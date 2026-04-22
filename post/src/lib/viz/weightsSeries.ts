@@ -31,6 +31,9 @@ let _series: WeightsSeries | null = null;
 let _legacy: WeightsData | null = null;
 /** Per-tensor max|Δ| across the whole series, baseline = snapshot[steps[0]]. */
 let _absMax: Record<string, number> = {};
+/** Reusable output buffers — allocated once per key, mutated in place each call. */
+const _valBuf: Record<string, Float64Array> = {};
+const _deltaBuf: Record<string, Float64Array> = {};
 
 export async function loadWeightsSeries(base: string): Promise<void> {
   try {
@@ -90,9 +93,9 @@ export function weightSeriesSteps(): number[] {
 
 export type InterpolatedDelta = {
   /** Interpolated absolute weight values at `step`. */
-  values: number[];
+  values: Float64Array | number[];
   /** Per-cell delta from the baseline snapshot. Same length as `values`. */
-  delta: number[];
+  delta: Float64Array | number[];
   /** Per-tensor max|Δ| over the whole series, for fixed diverging scale. */
   absMax: number;
   shape: number[];
@@ -129,8 +132,11 @@ export function getInterpolatedDeltaAt(key: string, step: number): InterpolatedD
   if (!wLo || !wHi) return null;
 
   const n = baseline.data.length;
-  const values = new Array<number>(n);
-  const delta = new Array<number>(n);
+  // Reuse per-key Float64Arrays; allocate only on first call or if tensor size changed.
+  if (!_valBuf[key] || _valBuf[key].length !== n) _valBuf[key] = new Float64Array(n);
+  if (!_deltaBuf[key] || _deltaBuf[key].length !== n) _deltaBuf[key] = new Float64Array(n);
+  const values = _valBuf[key];
+  const delta = _deltaBuf[key];
   for (let i = 0; i < n; i++) {
     const v = wLo.data[i] * (1 - frac) + wHi.data[i] * frac;
     values[i] = v;

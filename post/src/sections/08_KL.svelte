@@ -17,7 +17,7 @@
       <Math tex={String.raw`-\,\beta\,\operatorname{KL}\!\left(\pi_\theta \,\|\, \pi_{\text{ref}}\right)`} speak="kl-penalty" displayMode />
     </p>
     <p>
-      Older methods like PPO bake this KL penalty into the reward. GRPO untangles them, holding KL divergence as a distinct penalty. The coefficient <Math tex={String.raw`\beta`} speak="beta" /> (often 0.04) acts as the leash tension, dictating how fiercely the active policy anchors back to the reference model.
+      Older RLHF pipelines (InstructGPT-style) bake this KL penalty into the per-token reward signal. GRPO untangles them, holding KL divergence as a distinct penalty term in the objective. The coefficient <Math tex={String.raw`\beta`} speak="beta" /> (often 0.04) acts as the leash tension, dictating how fiercely the active policy anchors back to the reference model.
     </p>
     <p>
       Picture the two policies as bell curves over the move vocabulary.
@@ -33,8 +33,7 @@
 
   <Prose>
     <p>
-      In code, GRPO uses the low-variance <em>k3</em> estimator per-token
-      instead of summing over the full vocabulary every step:
+      In code, GRPO uses an unbiased per-token KL estimator (the <em>k3</em> estimator from <a href="http://joschu.net/blog/kl-approx.html">Schulman's KL-approximation post</a>, also used in the paper's Eq. 4) instead of summing over the full vocabulary every step:
     </p>
     <p style="text-align: center;">
       <Math

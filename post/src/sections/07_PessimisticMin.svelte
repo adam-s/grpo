@@ -33,7 +33,7 @@
       The key is deliberate <em>asymmetry</em>. When the advantage is positive,
       the <Math tex={String.raw`\min`} speak="min" /> caps the upside — once the
       probability ratio exceeds <Math tex={String.raw`1+\varepsilon`} />, extra
-      confidence earns no credit. When negative, it selects the more negative term, ensuring bad moves can't escape blame.
+      confidence earns no credit. When the advantage is negative, the <Math tex={String.raw`\min`} /> selects the more-negative term when <Math tex={String.raw`\rho > 1-\varepsilon`} />, so bad moves can't escape blame by staying close to the old policy. Symmetrically, when <Math tex={String.raw`\rho < 1-\varepsilon`} /> (the policy is already backing away from that move), the clip returns <Math tex={String.raw`(1-\varepsilon)\,\hat{A}`} />, which is less negative than <Math tex={String.raw`\rho\,\hat{A}`} />, limiting the credit awarded for reducing a bad move's probability.
     </p>
   </Prose>
 </Section>

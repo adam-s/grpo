@@ -105,7 +105,7 @@ export const viewH: number = laid.viewH;
 
 const byId: Record<string, LaidOutBox> = Object.fromEntries(archBoxes.map((b) => [b.id, b]));
 
-const arrowPairs: [string, string][] = [
+export const arrowPairs: [string, string][] = [
   ['embed', 'wq'], ['embed', 'wk'], ['embed', 'wv'],
   ['wq', 'wo'], ['wk', 'wo'], ['wv', 'wo'],
   ['wo', 'gate'], ['wo', 'up'],

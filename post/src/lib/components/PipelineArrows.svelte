@@ -26,6 +26,9 @@
 
   let arcs = $state<Arc[]>([]);
   let modelArcs = $state<Arc[]>([]);
+  // Epoch counters to discard stale async recomputes that finish out of order.
+  let recomputeEpoch = 0;
+  let recomputeModelEpoch = 0;
   let vw = $state(0);
   let vh = $state(0);
 
@@ -115,7 +118,9 @@
   }
 
   async function recompute(h: number | null): Promise<void> {
+    const myEpoch = ++recomputeEpoch;
     await tick();
+    if (myEpoch !== recomputeEpoch) return; // stale — a newer call superseded this one
     if (h == null) { arcs = []; return; }
     const op = opByNum(h);
     if (!op) { arcs = []; return; }
@@ -188,7 +193,9 @@
   }
 
   async function recomputeModel(): Promise<void> {
+    const myEpoch = ++recomputeModelEpoch;
     await tick();
+    if (myEpoch !== recomputeModelEpoch) return; // stale — a newer call superseded this one
     const out: Arc[] = [];
     for (const { from, to, side } of MODEL_LINKS) {
       const fEl = cardOf(from);
@@ -235,8 +242,18 @@
       rafId = requestAnimationFrame(() => {
         rafId = null;
         updateViewport();
-        // Skip the full recompute when nothing's in view and nothing's hovered.
-        if (!anyModelLinkVisible && $hoveredCard == null) return;
+        // Skip the full recompute when nothing's in view and nothing's
+        // hovered AND nothing's currently drawn. The "and nothing drawn"
+        // clause matters: the SVG is position:fixed, so if we early-return
+        // while arcs are still in the array they'll appear glued to the
+        // viewport while the page scrolls. Letting one more recompute run
+        // clears the stale arcs, and the next frame can safely skip.
+        if (
+          !anyModelLinkVisible &&
+          $hoveredCard == null &&
+          arcs.length === 0 &&
+          modelArcs.length === 0
+        ) return;
         recompute($hoveredCard);
         recomputeModel();
       });
