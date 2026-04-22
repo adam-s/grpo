@@ -8,7 +8,7 @@
 <Section eyebrow="Background" title="Reinforcement learning, via a cube" id="background">
   <Prose>
     <p>
-      Before the math, let's establish intuition. Every reinforcement learning 
+      Before the math, let me establish intuition. Every reinforcement learning
       setup relies on an <strong>agent</strong> interacting with an <strong>environment</strong>.
     </p>
     <p>
