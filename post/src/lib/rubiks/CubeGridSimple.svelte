@@ -143,7 +143,7 @@
     }
 
     (async () => {
-      const res = await fetch('/data/trace-moves.json');
+      const res = await fetch(`${import.meta.env.BASE_URL}data/trace-moves.json`);
       const records: TraceRecord[] = await res.json();
       const filtered = records
         .filter((r) => depths.includes(r.depth))
