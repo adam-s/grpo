@@ -1,5 +1,7 @@
 # GRPO Explainer & Toy Model
 
+https://github.com/user-attachments/assets/7785b09d-d886-4edf-b144-c43772ca88bd
+
 Welcome to the GRPO project! This repository contains a deep dive into **Group Relative Policy Optimization (GRPO)**, featuring both an interactive web-based explainer and a functional toy implementation in Python.
 
 ## 🚀 Project Overview
